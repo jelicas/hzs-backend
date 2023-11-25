@@ -4,7 +4,7 @@ import { postController } from "../controllers/post.controller.js"
 
 const postRouter = Router();
 
-postRouter.get("/", postController.getPosts);
+postRouter.get("", authorizeUser, postController.getPosts);
 
 postRouter.get("/:id", postController.getPost);
 

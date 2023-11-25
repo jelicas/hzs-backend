@@ -13,8 +13,8 @@ async function main() {
 
     app.use(cors());
     app.use(express.json());
-    app.use('/user', userRouter);
-    app.use('/post', postRouter);
+    app.use("/user", userRouter);
+    app.use("/post", postRouter);
 
     app.listen(3001, () => {
         console.log("Up and running");

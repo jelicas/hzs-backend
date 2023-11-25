@@ -15,7 +15,7 @@ export const postController = {
                     .skip(parseInt(offset))
                     .limit(parseInt(limit));
             } else {
-                posts = await postModel.find().populate("author", "username");
+                posts = await postModel.find().select("-comments").populate("author", "username");
             }
 
             res.status(200).send(posts);
